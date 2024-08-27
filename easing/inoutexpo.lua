@@ -1,6 +1,13 @@
 -- InOutExpo
 local function inoutexpo(x)
-	return x < 0 and 0 or x > 1 and 1 or x < 0.5 and ((2 ^ (20 * x - 10)) / 2) or ((2 - (2 ^ (-20 * x + 10))) / 2);
+	if x < 0.0 then
+		return 0.0;
+	elseif x > 1.0 then
+		return 1.0;
+	elseif x < 0.5 then
+		return (2.0 ^ (20.0 * x - 10.0)) / 2.0;
+	end
+	return (2.0 - (2.0 ^ (-20.0 * x + 10.0))) / 2.0;
 end
 
 return inoutexpo;

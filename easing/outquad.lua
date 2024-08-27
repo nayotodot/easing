@@ -1,6 +1,7 @@
 -- OutQuad
 local function outquad(x)
-	return 1 - (1 - x) * (1 - x);
+	local m1 = 1.0 - x;
+	return 1.0 - m1 * m1;
 end
 
 return outquad;

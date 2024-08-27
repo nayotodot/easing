@@ -1,6 +1,9 @@
 -- OutExpo
 local function outexpo(x)
-	return x > 1 and 1 or (1 - (2 ^ (-10 * x)));
+	if x > 1.0 then
+		return 1.0;
+	end
+	return 1.0 - (2.0 ^ (-10.0 * x));
 end
 
 return outexpo;

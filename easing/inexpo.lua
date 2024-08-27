@@ -1,6 +1,9 @@
 -- InExpo
 local function inexpo(x)
-	return x < 0 and 0 or (2 ^ (10 * x - 10));
+	if x < 0.0 then
+		return 0.0;
+	end
+	return 2.0 ^ (10.0 * x - 10.0);
 end
 
 return inexpo;

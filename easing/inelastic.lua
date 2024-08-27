@@ -1,11 +1,17 @@
 -- InElastic
-local pi = math.pi;
+local pi  = math.pi;
 local sin = math.sin;
 
-local c4 = (2 * pi) / 3;
+local c4 = (2.0 * pi) / 3.0;
 
 local function inelastic(x)
-	return x < 0 and 0 or x > 1 and 1 or (-(2 ^ (10 * x - 10)) * sin((x * 10 - 10.75) * c4));
+	if x < 0.0 then
+		return 0.0;
+	elseif x > 1.0 then
+		return 1.0;
+	end
+	local m1 = x * 10.0;
+	return -(2.0 ^ (m1 - 10.0)) * sin((m1 - 10.75) * c4);
 end
 
 return inelastic;
